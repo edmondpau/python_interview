@@ -175,15 +175,3 @@ print(cube(3))
 def cube(num) :
     return num*num*num
 
-
-### Using Git
-# TO TEST pushing small commits
-
-
-## Problem No site destination
-
-###         Making some useless lines
-###         Making more
-###         MORE MORE LINES
-
-## After adding GIT REMOTE
