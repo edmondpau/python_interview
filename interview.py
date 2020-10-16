@@ -1,4 +1,4 @@
-character_name = "John"
+ character_name = "John"
 character_age = "35"
 print("AAAA" + character_name + "BBB    BB")
 
@@ -175,3 +175,6 @@ print(cube(3))
 def cube(num) :
     return num*num*num
 
+
+### Using Git
+# TO TEST pushing small commits
