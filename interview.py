@@ -224,7 +224,7 @@ print(monthconversions["feb"])
 print(monthconversions.get("dec","WTF"))
 
 
-
+########################################
 ##3 While loop
 i = 1
 while i <= 10:
@@ -256,3 +256,245 @@ if out_of_guesses:
     print("fuck off bye")
 else:
     print("havea a one night stand")
+
+
+########################################
+#### For loop
+
+for letter in "AA fancy houSE":
+    print(letter)
+
+for index in range(3,10):
+    print(index)
+
+friends = ["11", "2222", "33333"]
+for whatevername in friends:
+    print(whateveRname)
+
+for index in range(len(friends)):
+    print(friends[index])
+## equals to
+    friends[1]
+    friends[2]
+    friends[3]
+
+# for loop example
+for index in range(5):
+    if index == 0:
+        print("first iteration")
+    else:
+        print("Others")
+
+# exponential function selfmade
+
+print(2**3)
+
+def raise_to_power(base_num, power_num):
+    result = 1
+    for index in range(power_num):
+        result = result * base_num
+    return result
+
+print(raise_to_power(3,3))
+
+
+##########
+
+## 2D lists loop
+#### LISTS
+number_grid = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+    [0]
+]
+
+print(number_grid[2][1])
+
+
+
+for row in number_grid:
+    print(row)
+
+
+for row in number_grid:
+    print(row)
+
+
+for row in number_grid:
+    for col in row:
+        print(col)
+
+
+
+def translate(phrase):
+    translation = ""
+    for letter in phrase:
+        if letter in "AEIOUaeiou":
+            translation = translation + "fuck"
+        else:
+            translation = translation + letter
+    return translation
+
+print(translate(input("Enter a phrase: ")))
+
+
+def translate(phrase):
+    translation = ""
+    for letter in phrase:
+        if letter.lower() in "aeiou":
+            translation = translation + "FUCK"
+        else:
+            translation = translation + "fuck"
+    else:
+        translation = translation + letter
+    return translation
+
+print(translate(input("Enter a phrase: ")))
+
+
+
+
+
+###### Try/Except Block 
+### Protect program
+
+# Avoid PROGRAM crash
+# try a piece of code before crashing
+
+
+try:
+    number = int(input("Enter a number"))
+    print(number)
+
+    value = 0/0
+except ValueError:
+    print("Noob program")
+except ZeroDivisionError:
+    print("MATH FUCK")
+
+
+except ZeroDivisionError as err:
+    print(err)
+    print("Math Fuck")
+
+
+### IMPORTING MODULES
+# importing functionality from EXTERNAL files
+
+import useful_tools
+print(useful_tools.roll_dice)
+
+## 3rd party modules
+# PYTHON-DOCX
+# Pypl.org
+
+pip install python-docx
+import docx
+docx.end=
+
+pip uninstall python-docx
+
+
+
+
+
+############## CLASSES & OBJECTS
+# Create OWN DATA type --> class
+# Something cant be represented
+
+class Student:
+
+    def __init__(self, name, major, gpa, is_on_probation)
+        self.name = name
+        self.major = major
+        self.gpa = gpa
+        self.is_on_probation = is_on_probation
+
+from Student import Student
+
+student1 = Student("Jim","Business", 3.1, False)
+
+print(student1.name)
+print(student1.is_on_probation)
+
+
+class Student:
+
+    def __init__(self, name, major, gpa, is_on_probation)
+        self.name = name
+        self.major = major
+        self.gpa = gpa
+        self.is_on_probation
+
+    def on_honor_roll(self):
+        if self.gpa > 3.5:
+            return True
+        else:
+            return False
+
+
+######Multiple choice Quiz (Classes & IF & LOOP)
+
+from Question import Question
+
+question_prompts = [
+    "What color are FUCK?\n(a) Red/Green\n(b) Purple",
+    "What color are pussy?\n(a) Red/Green\n(b) Purple",
+    "What color are BITCH?\n(a) Red/Green\n(b) Purple"
+]
+
+questions = [
+    Question(question_prompts[0], "b"),
+    Question(question_prompts[0], "a"),
+    Question(question_prompts[0], "b"),
+]
+
+
+def run_test(questions):
+    score = 0
+    for question in questions:
+        answer = input(question.prompt)
+        if answer == question.answer:
+            score += 1
+
+
+print("You got" + str(score) + "/" + str(len(questions)) + "correct")
+
+run_test(questions)
+
+
+
+
+
+#### Class
+class Chef:
+
+    def make_chicken(self):
+        print("The chef makes a chicken")
+
+    def make_salad(self):
+        print("The chef makes salads")
+    
+    def make_special_dish(self):
+        print("BBQ ribs")
+
+from Chef import Chef
+
+class ChineseChef(Chef):
+
+# Inside of ChineseChef
+# I am able to use all FUNCTIOLNS inside of Chef
+
+def make_salad(self):
+    print("The chef makes a salad")
+
+def make_special_dish(self):
+    print("The chef makes bbq ribs")
+
+
+
+
+
+
+
