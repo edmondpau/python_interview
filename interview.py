@@ -186,17 +186,18 @@ is_pussy = False
 
 if is_dick or is_pussy:
     print("You are a dick")
-else :
-    print("Bitch")
+    else:
+        print("BB")
 
 
 if is_dick and is_pussy:
     print("Get fk")
-elif is_dick and not (is_pussy)
+    elif is_dick and not (is_pussy)
     print("WOWOOWO")
-elif not (is_dick) and (is_pussy)
+    elif not (is_dick) and (is_pussy)
     print("minus plus")
-else :
-    print("Double negative")
+    else:
+        print("Double negative")
+
 
 
