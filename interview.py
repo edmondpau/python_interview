@@ -226,3 +226,33 @@ print(monthconversions.get("dec","WTF"))
 
 
 ##3 While loop
+i = 1
+while i <= 10:
+    print(i)
+    i += 1
+else:
+    print("bye")
+
+
+secret_word = 'Edmond'
+guess = ""
+
+while guess != secret_word:
+    guess = input('Enter Word')
+print("WINN")
+
+secret_word = 'Edmond'
+guess = ""
+guess_count = 0
+guess_limit = 3
+out_of_guesses = False
+while guess != secret_word and not(out_of_guesses):
+    if guess_count < guess_limit:
+        guess = input("Enter STH")
+        guess_count += 1
+    else:
+        out_of_guesses True
+if out_of_guesses:
+    print("fuck off bye")
+else:
+    print("havea a one night stand")
