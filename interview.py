@@ -1,9 +1,9 @@
- character_name = "John"
+character_name = "John"
 character_age = "35"
 print("AAAA" + character_name + "BBB    BB")
 
 character_name = "Tom"
-character_age "50"
+character_age = "50"
 print("THere once as a man named" + character_name + ",")
 print("but didn't like being" + character_age + ".")
 
@@ -13,7 +13,7 @@ print("edmond\nPau")
 print("edmond\"Pau")
 print("edmond\Pau")
 
-phrase = "Edmond Pau"a0
+phrase = "Edmond Pau"
 print(phrase.)
 print(phrase.lower() + " is cool")
 print(phrase.upper() + " is Fking good")
@@ -155,6 +155,8 @@ employee_file = open("employees.txt", "w")
 employee_file.write("\nKelly Customer Services")
 employee_file.close()
 
+
+############################################
 ### FUNCTIONS
 
 def say_hi ():
@@ -174,6 +176,27 @@ print(cube(3))
 
 def cube(num) :
     return num*num*num
+    print("A")
+print(cube(3))
 
 
-#Check name
+### If statements
+is_dick = False
+is_pussy = False
+
+if is_dick or is_pussy:
+    print("You are a dick")
+else :
+    print("Bitch")
+
+
+if is_dick and is_pussy:
+    print("Get fk")
+elif is_dick and not (is_pussy)
+    print("WOWOOWO")
+elif not (is_dick) and (is_pussy)
+    print("minus plus")
+else :
+    print("Double negative")
+
+
