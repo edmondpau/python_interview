@@ -186,18 +186,43 @@ is_pussy = False
 
 if is_dick or is_pussy:
     print("You are a dick")
-    else:
-        print("BB")
+else:
+    print("BB")
 
 
+### elif bug but the code is good
 if is_dick and is_pussy:
     print("Get fk")
-    elif is_dick and not (is_pussy)
-    print("WOWOOWO")
-    elif not (is_dick) and (is_pussy)
+elif not (is_dick) and (is_pussy):
     print("minus plus")
+elif is_dick and is_pussy:
+    print("WOWOOWO")
+else:
+    print("Double negative")
+
+
+def max_num(num1, num2, num3)
+    if num1 >= num2 and num1 >= num3:
+        print("1 is pussy")
+        return num1
+    elif num2 >= num1 and num2 >= num3:
+        print("2 OP")
+        return num2
     else:
-        print("Double negative")
+        print("3")
+        return num3
+
+print(max_num(300,1,20))
+
+
+## Dictionary
+monthconversions = {
+    "jan" : "jannn",
+    "feb" : "febbb"
+}
+print(monthconversions["feb"])
+print(monthconversions.get("dec","WTF"))
 
 
 
+##3 While loop
