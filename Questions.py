@@ -635,5 +635,81 @@ y = 10
 '123'.isnumeric()
 #=> True
 
+#47
+'123a'.isalpha()
+#=> False
+'a'.isalpha()
+#=> True
+
+'123a'.is()
+
+#48
+'123abc...'.isalnum()
+#=> False
+'123abc'.isalnum()
+#=> True
+
+#49
+d = {'id':7, 'name':'Shiba', 'color':'brown', 'speed':'very slow'}
+list(d)
+#=> ['id', 'name', 'color', 'speed']
+
+#50
+small_word = 'potatocake'
+big_word = 'FISHCAKE'
+small_word.upper()
+#=> 'POTATOCAKE'
+big_word.lower()
+#=> 'fishcake'
+
+#51
+li = ['a','b','c','d']
+li.remove('b')
+li
+#=> ['a', 'c', 'd']
+
+li = ['a','b','c','d']
+del li[0]
+li
+#=> ['b', 'c', 'd']
+
+li = ['a','b','c','d']
+li.pop(2)
+#=> 'c'
+li
+#=> ['a', 'b', 'd']
+
+#52
+# creating a list of letters
+import string
+list(string.ascii_lowercase)
+alphabet = list(string.ascii_lowercase)
+# list comprehension
+d = {val:idx for idx,val in enumerate(alphabet)} 
+d
+#=> {'a': 0,
+#=>  'b': 1,
+#=>  'c': 2,
+#=> ...
+#=>  'x': 23,
+#=>  'y': 24,
+#=>  'z': 25}
 
 
+try:
+    # try to do this
+except:
+    # if try block fails then do this
+finally:
+    # always do this
+
+try:
+    val = 1 + 'A'
+except:
+    val = 10
+finally:
+    print('complete')
+    
+print(val)
+#=> complete
+#=> 10
