@@ -201,3 +201,125 @@ def add_three(x):
 li = [1,2,3]
 list(map(add_three, li))
 #=> [4, 5, 6]
+
+
+
+##10
+from functools import reduce
+
+
+def add_three(x,y):
+    return x + y
+
+
+li = [1,2,3,5]
+
+
+reduce(add_three,li)
+#=> 11
+
+
+
+####11
+def add_three(x):
+    if x % 2 == 0:
+        return True
+    else:
+        return False
+
+
+li = [1,2,3,4,5,6,7,8]
+
+
+[i for i in filter(add_three, li)]
+#=> [2,4,6,8]
+
+
+# 12
+
+x = 'some text'
+y = x
+x is y
+#=> True
+
+
+del x
+this deletes the 'a' name but does nothing to the object in memoryview
+
+
+z = y
+y is z
+#=> True
+
+
+What we see is that all these names point to the same object in memory, which wasn’t affected by del x.
+Here’s another interesting example with a function.
+
+
+
+name = 'text'
+
+
+def add_chars(strl):
+    print( id(strl) )   #=> 123
+    print( id(name) )   #=> 123
+
+
+#new name, same object
+str2 = strl
+
+
+creates a new name (with same name as the first) and object
+strl += 's'
+print( id(strl) ) #=> 888
+
+
+still the original object
+print(  id(str2)  ) #=> 123
+
+
+add_chars(name)
+print(name) 
+#=>text
+
+
+## 13
+
+li = ['a','b','c']
+
+
+print(li)
+li.reverse()
+print(li)
+
+#>>> ['a', 'b', 'c']
+#>>> ['c', 'b', 'a']
+
+
+
+## 14
+
+'cat' * 3
+#>>> 'catcatcat'
+
+
+#15 
+
+[1,2,3] * 2
+#>> [1,2,3,1,2,3]
+
+
+
+## 16
+
+class Shirt:
+    def __init_(self, color):
+        self.color = color
+
+
+s = Shirt('yellow')
+s.color
+#>>> 'yellow'
+
+
+#17
