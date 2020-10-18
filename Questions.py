@@ -499,6 +499,15 @@ b = [1,2,3]
 #=> [('a', 1), ('b', 2), ('c', 3)]
 
 
+#39
+
+d = {'c':3, 'd':4, 'b':2, 'a':1}
+sorted(d.items())
+#=> [('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+
+
+
+
 #40
 class Car():
     def drive(self):
@@ -511,3 +520,120 @@ class Audi(Car):
 
 audi = Audi()
 audi.drive()
+
+#41
+s = 'A string with     white space'
+''.join(s.split())
+#=> 'Astringwithwhitespace'
+
+s = 'A string with     white space'
+s.replace(' ', '')
+#=> 'Astringwithwhitespace'
+
+a = 'Astringwithwhitespace'
+a.replace('',' ')
+' A s t r i n g w i t h w h i t e s p a c e '
+
+
+
+#42 enumerate()
+li = ['a','b','c','d','e']
+
+for idx,val in enumerate(li):
+    print(idx, val)
+    
+#=> 0 a
+#=> 1 b
+#=> 2 c
+#=> 3 d
+#=> 4 e
+
+#43
+
+
+
+a = [1,2,3,4,5]
+
+for i in a:
+    if i > 3:
+print(i)
+
+a = [1,2,3,4,5]
+
+for i in a:
+    if i > 3:
+        pass
+    print(i)
+
+#=> 1
+#=> 2
+#=> 3
+#=> 4
+#=> 5
+
+# Continue
+for i in a:
+    if i > 3:
+    print(i)
+
+
+for i in a:
+    if i > 3:
+        continue
+    print(i)
+
+#=> 1
+#=> 2
+#=> 3
+
+for i in a:
+    if i < 3:
+        continue
+    print(i)
+
+#=> 3
+#=> 4
+#=> 5
+
+
+#BREAK
+
+for i in a:
+    if i == 3:
+        break
+    print(i)   
+
+#=> 1
+#=> 2
+
+
+
+#44 Convert the following for loop into a list comprehension
+a = [1,2,3,4,5]
+a2 = []
+for i in a:
+     a2.append(i + 1)
+print(a2)
+#=> [2, 3, 4, 5, 6]
+
+ConvertTTTTTTTTTTTTTTT
+a3 = [i+1 for i in a]
+print(a3)
+#=> [2, 3, 4, 5, 6]
+
+#45
+x = 5
+y = 10
+'greater' if x > 6 else 'less'
+#=> 'less'
+'greater' if y > 6 else 'less'
+#=> 'greater'
+
+#46
+'123a'.isnumeric()
+#=> False
+'123'.isnumeric()
+#=> True
+
+
+
