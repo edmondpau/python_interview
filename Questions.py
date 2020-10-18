@@ -414,6 +414,80 @@ with open('file.p', 'wb') as f:
 with open('file.p', 'rb') as f:
     loaded_obj = pickle.load(f)
 
-    
+
 print(loaded_obj)
 #=> [{'id': 1, 'name': 'Stuffy'}, {'id': 2, 'name': 'Fluffy'}]
+
+
+
+#29
+
+
+a = [False, False, False]
+b = [True, False, False]
+c = [True, True, True]
+print( any(a) )
+print( any(b) )
+print( any(c) )
+#=> False
+#=> True
+#=> True
+print( all(a) )
+print( all(b) )
+print( all(c) )
+#=> False
+#=> False
+#=> True
+
+import sklearn
+
+from sklearn import cross_validation
+
+#32
+
+value = 5
+value += 1
+print(value)
+#=> 6
+value -= 1
+value -= 1
+print(value)
+#=> 4
+
+
+#33
+bin(5)
+#=> '0b101'
+
+
+#34
+a = [1,1,1,2,3]
+a = list(set(a))
+print(a)
+#=> [1, 2, 3]
+
+
+
+#35
+'a' in ['a','b','c']
+#=> True
+'a' in [1,2,3]
+#=> False
+1 in [1,2,3]
+#=> True
+
+#36
+
+a = [1,2,3]
+b = [1,2,3]
+a.append(6)
+print(a)
+#=> [1, 2, 3, 6]
+b.extend([4,5])
+print(b)
+#=> [1, 2, 3, 4, 5]
+
+abs(2)
+#=> 2
+abs(-2)
+#=> 2
