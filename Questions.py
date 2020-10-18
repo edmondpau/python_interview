@@ -713,3 +713,17 @@ finally:
 print(val)
 #=> complete
 #=> 10
+
+# Dict
+my_dict = {'name': 'Hugh Jackman', 'age': 50, 'films': ['Logan', 'Deadpool 2', 'The Front Runner']}
+my_dict['age']
+
+#Lamda
+(lambda x, y, z: (x+y) ** z)(3,2,2)
+#>25
+
+
+#List comprehensions
+old_list = [1, 0, -2, 4, -3]
+new_list = [x**2 for x in old_list if x > 0]
+print(new_list)
