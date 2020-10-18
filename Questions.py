@@ -491,3 +491,23 @@ abs(2)
 #=> 2
 abs(-2)
 #=> 2
+
+#38
+a = ['a','b','c']
+b = [1,2,3]
+[(k,v) for k,v in zip(a,b)]
+#=> [('a', 1), ('b', 2), ('c', 3)]
+
+
+#40
+class Car():
+    def drive(self):
+        print('vroom')
+
+
+class Audi(Car):
+    pass
+
+
+audi = Audi()
+audi.drive()
