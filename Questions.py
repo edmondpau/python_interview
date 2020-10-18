@@ -323,3 +323,97 @@ s.color
 
 
 #17
+
+a = [1.2]
+b = [3,4,5]
+
+
+a + b
+
+
+
+##18
+
+li1 = [['a'],['b'],['c']]
+li2 = li1
+
+
+li1.append(['d'])
+print(li2)
+#=> [['a'], ['b'], ['c'], ['d']]
+
+
+li3 = [['a'],['b'],['c']]
+li4 = list(li3)
+
+
+li3.append([4])
+print(li4)
+#=> [['a'], ['b'], ['c']]
+
+
+li3[0][0] = ['X']
+print(li4)
+#=> [[['X']], ['b'], ['c']]
+
+import copy
+
+
+li5 = [['a'],['b'],['c']]
+li6 = copy.deepcopy(li5)
+
+
+li5.append([4])
+li5[0][0] = ['X']
+print(li6)
+#=> [['a'], ['b'], ['c']]
+
+
+
+#19
+
+
+#20
+
+import numpy as np
+
+
+a = np.array([1,2,3])
+b = np.array([4,5,6])
+
+
+np.concatenate((a,b))
+#=> array([1, 2, 3, 4, 5, 6])
+
+
+a = 5.12345
+round(a,3)
+#=> 5.123
+
+
+a = [0,1,2,3,4,5,6,7,8,9]
+print(a[:2])
+#=> [0, 1]
+print(a[8:])
+#=> [8, 9]
+print(a[2:8])
+#=> [2, 3, 4, 5, 6, 7]
+print(a[2:8:2])
+#=> [2, 4, 6]
+
+
+import pickle
+obj = [
+    {'id':1, 'name':'Stuffy'},
+    {'id':2, 'name': 'Fluffy'}
+]
+
+
+with open('file.p', 'wb') as f:
+    pickle.dump(obj, f)
+with open('file.p', 'rb') as f:
+    loaded_obj = pickle.load(f)
+
+    
+print(loaded_obj)
+#=> [{'id': 1, 'name': 'Stuffy'}, {'id': 2, 'name': 'Fluffy'}]
