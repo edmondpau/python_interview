@@ -727,3 +727,57 @@ my_dict['age']
 old_list = [1, 0, -2, 4, -3]
 new_list = [x**2 for x in old_list if x > 0]
 print(new_list)
+#>>> [1,16]
+
+#List indexing
+list = [2, 5, 4, 7, 5, 6, 9]
+print (list[-1])
+#> 9
+
+text = "I love data science"
+print (text[-3])
+#> n\
+
+#Pandas library
+import pandas as pd
+emloyees = pd.read_csv('HR.csv')
+
+employees.isna()
+
+emploees.info()
+
+
+employees[['Department', 'Age']]
+
+employees['Active'] = 1
+employees.head()
+
+employees['Age'].hist()
+
+
+1. load library
+2. create numpy matrix
+3. Trace
+import numpy as np
+matrix = np.array([[1, 2, 3],
+                   [4, 5, 6],
+                   [7, 8, 9],
+                   [10, 11, 12]])
+print()
+print('Calculate the tracre of the matrix: ',
+       matrix.diagonal().sum())
+
+
+ import numpy as np
+
+ matrixA = np.array([[1, 2, 3, 23],
+                       [4, 5, 6, 25],
+                       [7, 8, 9, 28],
+                       [10, 11, 12, 41]])
+
+
+ print(); print(matrixA.flatten())
+
+ [ 1  2  3 23  4  5  6 25  7  8  9 28 10 11 12 41]
+
+ 
