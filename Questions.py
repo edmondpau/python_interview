@@ -780,4 +780,134 @@ print('Calculate the tracre of the matrix: ',
 
  [ 1  2  3 23  4  5  6 25  7  8  9 28 10 11 12 41]
 
- 
+#Determinant
+ import numpy as np
+# Create matrix
+matrixA = np.array([[1, 2, 3, 23],
+                   [4, 5, 6, 25],
+                   [7, 8, 9, 28],
+                   [10, 11, 12, 41]])
+matrixB = np.array([[2, 3, 4],
+                   [5, 6, 9],
+                   [7, 8, 1]])
+# Return determinant of matrix
+print(); print(np.linalg.det(matrixA))
+print(); print(np.linalg.det(matrixB))
+
+#Trace of Matrix
+import numpy as np
+# Create matrix
+matrix = np.array([[1, 2, 3],
+                   [4, 5, 6],
+                   [7, 8, 9],
+                   [10, 11, 12]])
+# Calculate the tracre of the matrix
+print()
+print('Calculate the tracre of the matrix: ',
+       matrix.diagonal().sum())
+
+
+#DIagonal of matrix
+import numpy as np
+# Create matrix
+matrix = np.array([[1, 2, 3, 23],
+                   [4, 5, 6, 25],
+                   [7, 8, 9, 28],
+                   [10, 11, 12, 41]])
+# Return diagonal elements
+print()
+print(matrix.diagonal())
+# Calculate the tracre of the matrix
+print()
+print(matrix.diagonal().sum())
+
+
+#Inverse of matrix
+import numpy as np
+matrix = np.array([[1, 2, 3, 23],
+                   [4, 5, 6, 25],
+                   [7, 8, 9, 28],
+                   [10, 11, 12, 41]])
+Inv = np.linalg.inv(matrix)
+print()
+print(Inv)
+
+
+
+#How to convert a dictionary to a matrix or nArray in Python?
+from sklearn.feature_extraction 
+import DictVectorizer
+
+data_dict = [{'Pen': 2, 'Pencil': 4},
+                 {'Pen': 4, 'Pencil': 3},
+                 {'Pen': 1, 'Eraser': 2},
+                 {'Pen': 2, 'Eraser': 2}]
+print(data_dict)
+
+dictvectorizer = DictVectorizer(sparse=False)
+features = dictvectorizer.fit_transform(data_dict)
+print(features)
+
+feature_name =dictvectorizer.get_feature_names()
+print(feature_name)
+
+# reshape & change dimension of a matrix
+
+import numpy as np
+# Create a 4x3 matrix
+matrix = np.array([[1, 2, 3],
+                   [4, 5, 6],
+                   [7, 8, 9],
+                   [10, 11, 12]])
+# Reshape matrix into 2x6 matrix
+print()
+print(matrix.reshape(2, 6))
+print()
+print(matrix.reshape(3, 4))
+print()
+print(matrix.reshape(6, 2))
+
+#select array
+import numpy as np
+
+vector = np.array([1, 2, 3, 4, 5, 6])
+# Select second element
+print()
+print(vector[1])
+
+
+# Create matrix
+matrix = np.array([[1, 2, 3],
+               [4, 5, 6],
+               [7, 8, 9]])
+# Select second row, second column
+print()
+print(matrix[1,1])
+
+# Create Tensor
+tensor = np.array([
+                [[[1, 1], [1, 1]], [[2, 2], [2, 2]]],
+                [[[3, 3], [3, 3]], [[4, 4], [4, 4]]]
+              ])
+# Select second element of each of the three dimensions
+print()
+print(tensor[1,1,1])
+
+# Create vector and matrix
+import numpy as np
+# Create vector
+vector = np.array([1, 2, 3, 4, 5, 6])
+print()
+print("Original Vector: \n", vector)
+# Tranpose vector
+V = vector.T
+print("Transpose Vector: \n", V)
+# Create matrix
+matrix = np.array([[1, 2, 3],
+               [4, 5, 6],
+               [7, 8, 9]])
+print()
+print("Original Matrix: \n", matrix)
+# Transpose matrix
+M = matrix.T
+print("Transpose Matrix: \n", M)
