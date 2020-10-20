@@ -911,3 +911,36 @@ print("Original Matrix: \n", matrix)
 # Transpose matrix
 M = matrix.T
 print("Transpose Matrix: \n", M)
+
+5/2
+-5//2
+-5//3
+
+
+-4.1//2
+5.6/2
+
+#Append
+a = [1,2,3,4,5]
+a.append(6)
+print(a)
+
+b = [1,56,8,4,6]
+b.append('value')
+print(b)
+
+#Extend
+a = [1,2,3,4,5]
+a.extend('2')
+print(a)
+
+a = [1,2,3,4,5]
+a.extend(8)
+print(a)
+
+
+a = [1,2,3,4,5]
+a.extend(b)
+print(a)
+
+
