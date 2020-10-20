@@ -925,7 +925,7 @@ a = [1,2,3,4,5]
 a.append(6)
 print(a)
 
-b = [1,56,8,4,6]
+b = [1,56,8,4,6, 'value']
 b.append('value')
 print(b)
 
@@ -944,3 +944,70 @@ a.extend(b)
 print(a)
 
 
+#remove
+a = [1,2,3,4,5,10]
+a.remove(10)
+a
+a = [1,2,3,4,5,10]
+a.remove("3")
+a
+
+a = ["A", "B"]
+a.remove("A")
+a
+
+b = [1,56,8,4,6, 'value']
+b.pop(0)
+print(b)
+
+b = [1,56,8,4,6, 'value']
+b.pop()
+print(b)
+
+#count
+
+
+#open()
+a = open("asdahuf","w")
+print(a.writable())
+a.close()
+
+
+
+a = open("asdahuf","r")
+print(a.readable())
+a.close()
+
+
+#if-else
+if True:
+    this
+else:
+    that
+
+if AA or BB:
+    this
+else:
+    that
+
+#if-elif-else
+#not
+
+if AA or BB:
+    1 + +
+elif AA and not BB:
+    2 + -
+elif not AA and BB:
+    3 - +
+else:
+    4 otherwise
+
+AA = True
+BB = False
+if not AA or BB:
+    print("BB")
+else:
+    that
+
+
+#Setup dictionary
