@@ -1011,3 +1011,94 @@ else:
 
 
 #Setup dictionary
+aaa = {"1": "something", "2": "something2"}
+aaa[1]
+aaa["1"]
+
+aaa.get("33","testing")
+aaa
+
+aaa.get("33",)
+
+
+
+#while loop
+
+while this condition True:
+    do this 
+    then REPEAT
+else:
+    do this when False
+
+
+
+#for loop
+friends = ["a", "b", "c"]
+for wtf in friends:
+    print(friends)
+
+friends = ["a", "b", "c"]
+for i in friends:
+    print(friends)
+
+friends = [1,2,3,4,"5253523"]
+for i in friends:
+    print(friends)
+
+friends = "AAA"
+for i in friends:
+    print(friends)
+
+friends = "A"
+for wtf in friends:
+    print(friends)
+
+friends = 123
+for wtf in friends:
+    print(friends)
+
+for every index in something:
+    do this
+
+"123" = 3 index
+[1,2,3,4,"5253523"] = 5 index
+
+##Matrix
+matrixA = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+print(matrixA)
+print(matrixA[2][2])
+
+friends = [1,2,3,4,["abc","777","pop"]]
+friends[4]
+
+friends[[4]]
+
+friends[4][0]
+
+friends[4][[0]]
+
+friends[[4]][0]
+
+friends[4][0][1]
+
+friends[0:4]
+
+##string
+"don't"
+"\"yes\", i said"
+
+print("""\
+Usage: thingy [OPTIONS]
+     -h                        Display this usage message
+     -H hostname               Hostname to connect to
+""")
+
+friends = [1,2,3,4,["abc","777","pop"]]
+friends[0:99]
+
+range(10)
+print(range(10))
