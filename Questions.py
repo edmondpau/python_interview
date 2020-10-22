@@ -1110,6 +1110,11 @@ print(range(10))
 '1,2,3,4,5'.split(',')
 
 #Fizzbuzz
+#FizzBuzz. Print numbers from 1 to 100
+• If it’s a multiplier of 3, print “fizz”
+• If it’s a multiplier of 5, print “buzz”
+• If both 3 and 5 — “fizzbuzz"
+Otherwise, print the number itself 
 # 0-50
 for i in range(51):
     if i % 3 == 0 and i % 5 == 0:
@@ -1169,9 +1174,8 @@ def klargestDESC(array,k):
 
 
 array = [1,23,4,500,9999]
-k = 4
-print(klargestDESC(array,k))
-
+print(klargestDESC(array,4))
+klargestDESC(array,4)
 
 
 
