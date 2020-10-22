@@ -1102,3 +1102,77 @@ friends[0:99]
 
 range(10)
 print(range(10))
+
+#join
+','.join('12345')
+
+#split
+'1,2,3,4,5'.split(',')
+
+#Fizzbuzz
+# 0-50
+for i in range(51):
+    if i % 3 == 0 and i % 5 == 0:
+        print("fizzbuzz")
+    elif i % 5 == 0:
+        print("buzz")
+    elif i % 3 == 0:
+        print("fizz")
+    else:
+        print(i)
+
+# 1-50
+for i in range(1,51):
+    if i % 3 == 0 and i % 5 == 0:
+        print("fizzbuzz")
+    elif i % 5 == 0:
+        print("buzz")
+    elif i % 3 == 0:
+        print("fizz")
+    else:
+        print(i)
+
+
+
+#factorial
+import math as math
+math.factorial()
+
+#interpolation
+name = 'aa'
+
+print(f'TESTINT{name}')
+
+print('My {}'.format(name))
+
+
+
+#Given an array
+#k largest elements
+
+#Ascending order
+def klargestASC(array,k,n):
+    array.sort()
+    for i in range(n-k, n):
+        print(array[i])
+
+array = [1,23,4,500,9999]
+print(klargestASC(array,3,len(array)))
+klargestASC(array,3,len(array))
+
+
+#Descending order
+def klargestDESC(array,k):
+    array.sort(reverse= True)
+    for i in range(k):
+        print(array[i])
+
+
+array = [1,23,4,500,9999]
+k = 4
+print(klargestDESC(array,k))
+
+
+
+
+
