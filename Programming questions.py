@@ -12,8 +12,14 @@
 
 ### Create a Fibonacci series to an arbitrary boundary up to 2000
 
-###
-###
+### Returns a lits of numbers of the Fibonacci series instead of printing it (from 0 to 100)
+
+
+
+### Unpack a [3,6]
+
+set('1231231')
+
 ###
 ###
 ###
