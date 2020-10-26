@@ -18,7 +18,11 @@
 
 ### Unpack a [3,6]
 
-set('1231231')
+year = 2016
+event = 'Referendum'
+
+'results of {year} event'
+f'Results of the {year} {event}'
 
 ###
 ###
