@@ -23,6 +23,7 @@ event = 'Referendum'
 
 'results of {year} event'
 f'Results of the {year} {event}'
+15000/0.0134
 
 ###
 ###
