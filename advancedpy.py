@@ -173,7 +173,7 @@ and {var2}"
 print(mystring)
 
 
-
+---------------------------------------
 
 ####
 ####
@@ -189,4 +189,129 @@ print(mycounter.keys())
 print(mycounter.values())
 # most common element
 print(mycounter.most_common(1))
-print()
+# 2 most common element
+print(mycounter.most_common(2))
+# 1st tuple
+print(mycounter.most_common(1)[0])
+# 1st element
+print(mycounter(1)[0][0])
+# show all elements
+# Note must use list
+print(list(mycounter.elements()))
+
+
+#namedtuple
+from collections import namedtuple
+# (class name, whatever fields)
+Point = namedtuple('Point', 'x,y')
+pt = Point(1, -4)
+print(pt)
+print(pt.x,pt.y)
+
+
+
+# OrderedDict
+# now 3.7 will remeber the order in normal dict
+from collections import OrderedDict
+odict = OrderedDict()
+odict['b'] = 2
+odict['c'] = 3
+odict['d'] = 4
+odict['a'] = 1
+print(odict)
+
+
+#defaultdict
+# otherwise normal dict will show KeyError
+from collections import defaultdict
+d = defaultdict(int)
+d['a'] = 1
+d['b'] = 2
+print(d['a'])
+print(d['c'])
+
+d = defaultdict(float)
+print(d['c']) # 0.0
+
+d = defaultdict(list)
+print(d['c']) # empty list []
+
+#deque
+from collections import deque
+d   = deque()
+
+d.append(1)
+d.append(2)
+
+d.appendleft(3) # add at the left side
+print(d)
+
+d.popleft() #delete the left
+d.extendleft([4,4,4]) # extend at the left
+
+d.rotate(1) # every element move 1 to right
+d.rotate(2) # move 2 to right
+d.rotate(-1) # to the left
+
+------------------------------------------------------
+
+# itertools module
+## product
+from itertools import product
+a = [1,2]
+b = [3]
+prod = product(a,b)
+print(prod)
+print(list(prod)) # see all elements
+
+# repeat 
+prod = product(a,b, repeat = 2) 
+print(list(prod)) # see all elements
+
+
+## permutations = return all possible as
+## input
+from itertools import permutations
+a = [1,2,3]
+perm = permutations(a)
+print(list(perm))
+
+perm = permutations(a,2) # with length of 
+
+
+## combinations
+from itertools import combinations
+a = [1,2,3,4]
+comb = combinations(a,2)
+print(list(comb))
+
+from itertools import combinations, combinations_with_replacement
+a = [1,2,3,4]
+combr = combinations_with_replacement(a,2)
+print(list(combr))
+
+## accumulate = add up previous all
+from itertools import accumulate
+a = [1,2,3,4]
+acc = accumulate(a)
+print(a)
+print(list(acc))
+
+# taking max value each
+a = [1,3,99,10,109]
+acc_f = accumulate(a, func=max)
+print(a)
+print(list(acc_f))
+
+## groupby
+from itertools import groupby
+
+def smaller_than_3(x):
+    return x < 3
+
+a = [1,2,3,4]
+group_obj = groupby(a, key=smaller_than_3)
+print(group_obj)
+
+for key, value in group_obj:
+    print(key, list(value))
