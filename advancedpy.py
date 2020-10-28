@@ -194,7 +194,7 @@ print(mycounter.most_common(2))
 # 1st tuple
 print(mycounter.most_common(1)[0])
 # 1st element
-print(mycounter(1)[0][0])
+print(mycounter.most_common(1)[0][0])
 # show all elements
 # Note must use list
 print(list(mycounter.elements()))
@@ -276,8 +276,8 @@ a = [1,2,3]
 perm = permutations(a)
 print(list(perm))
 
-perm = permutations(a,2) # with length of 
-
+perm = permutations(a,2) # with length of 2
+print(list(perm))
 
 ## combinations
 from itertools import combinations
@@ -315,3 +315,160 @@ print(group_obj)
 
 for key, value in group_obj:
     print(key, list(value))
+
+
+
+# infinite iterators 
+# count cycle repeat
+from itertools import count, cycle,repeat
+
+for i in count(10):
+    print(i)
+    if i == 15:
+        break
+
+
+a = [1,2,3]
+for i in cycle(a):
+    print(i)
+    break
+
+for i in repeat(1,10):
+    print(i)
+
+
+
+
+
+----------------------------------------------------
+#map(func, sequence)
+a = [1,2,3,4,5]
+b = map(lambda x: x*2 , a)
+print(list(b))
+# Method2 list comprehension (better)
+c = [x*2 for x in a]
+print(c)
+
+
+# filter(func, sequence)
+# show all elements which func is TRUE
+a = [1,2,3,4,5,6]
+b = filter(lambda x: x%2==0, a)
+print(list(b))
+# Method2 list comprehension (better)
+c = [x for x in a if x%2==0]
+
+# reduce(func,sequence)
+# repeating apply the func and return a single value
+from functools import reduce
+a = [1,2,3,4,5,6]
+
+# need 2 arguments x,y
+product_a = reduce(lambda x,y: x*y, a)
+print(product_a)
+
+
+--------------------------------------
+
+#### logging module
+# only last 3 show
+import logging
+logging.debug('show')
+logging.info('show')
+logging.warning('show')
+logging.error('show')
+logging.critical('show')
+
+#change basic
+#check website
+
+# create own internal logger
+# logger with module name
+logger = logging.getLogger(__name__)
+logger.info('hello from testing module')
+
+# create handler
+streamhan = logging.StreamHandler()
+filehan = logging.FileHandler('file.log')
+
+# setting level and format
+streamhan.setLevel(logging.WARNING)
+filehan.setLevel(logging.ERROR)
+
+streamformat = logging.Formatter('')
+filefo
+
+------------------------------
+## raondom number 
+
+import random
+# uniform(lowerbound,upperbound)
+a = random.uniform(1,10)
+#randint(lowerb, upperb) = including upperbound
+a = random.randint.(1,10)
+10
+#randrange(lowerb,upperb) = not including upperb
+a = random.randrange(1,10)
+
+# normalvariate(mean,s.d.)
+a = random.normalvariate(0,1)
+
+#choice(x)
+mylist = list("ABCDEFGH")
+a = random.choice(mylist)
+
+# sample(x , number of elements) = unique element
+mylist = list("ABCDEFGH")
+a = random.sample(mylist, 3)
+print(a)
+
+# choices(x, # of times) = pick multiple time
+mylist = list("ABCDEFGH")
+a = random.choices(mylist, k=3)
+print(a)
+['F', 'D', 'D']
+
+# shuffle(x) = shuffle and change list instead care!!
+mylist = list("ABCDEFGH")
+random.shuffle(mylist)
+print(mylist)
+
+
+# random.seed(value) = pseudo-random numbers because 
+# reproducible to reproduce data  
+# DONT USE FOR SECURITY
+
+#1st seed
+random.seed(1)
+print(random.random())
+print(random.randint(1,10))
+
+# different seed = different
+random.seed(1)
+print(random.random())
+print(random.randint(1,10))
+
+# For secrets use secrets instead of random
+import secrets
+#ranbelow(lowerb,upperb) = not including upperb
+a = secrets.ranbelow(1,10)
+3
+
+#ranbits() = 1111 = 1+2+4+8 = 15 
+a = secrets.randbits(4) # 0-15
+
+#choice() = not reproducible
+a = secrets.choice(mylist)
+
+
+#NUMPY
+import numpy
+#np.random.rand(dimension)
+a = np.random.rand(3) #1d array with 3 elemnts
+
+#NUMPY
+import numpy as np
+#np.random.rand(dimension)
+a = np.random.rand(3) #1d array with 3 elemnts
+print(a)
+[0.09038764 0.09925056 0.6040674 ]
