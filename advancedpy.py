@@ -399,7 +399,7 @@ streamformat = logging.Formatter('')
 filefo
 
 ------------------------------
-## raondom number 
+## random number 
 
 import random
 # uniform(lowerbound,upperbound)
@@ -462,13 +462,245 @@ a = secrets.choice(mylist)
 
 
 #NUMPY
-import numpy
+# seed working too
+np.random.seed(1)
+
+import numpy as np
 #np.random.rand(dimension)
 a = np.random.rand(3) #1d array with 3 elemnts
 
 #NUMPY
-import numpy as np
+
 #np.random.rand(dimension)
 a = np.random.rand(3) #1d array with 3 elemnts
 print(a)
 [0.09038764 0.09925056 0.6040674 ]
+
+
+#rp.random.randint(lowerb, upperb,size) =
+a = np.random.randint(0,10,3)
+print(a)
+[3 8 0]
+
+#higher dimension using tuple
+a = np.random.randint(0,10,(3,4))
+print(a)
+[[1 2 7 2]
+ [7 1 6 6]
+ [6 2 7 1]]
+
+#np.array
+ar = np.array([[1,2,3], [4,5,6], [7,8,9]])
+print(ar)
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+#np.shuffle array
+np.random.shuffle(ar)
+print(ar)
+[[4 5 6]
+ [1 2 3]
+ [7 8 9]]
+
+
+
+------------------------------------------
+
+# Decorators (confusing)
+# function decorator
+
+#1st class object can be defined 
+@myd
+def dosomething():
+    pass
+
+
+## example
+def startenddecorator(func):
+
+    def wrapper():
+        print('Start')
+        func{}
+        print('End')
+    return wrapper
+
+def printname():
+    print('Alex')
+
+printname()
+
+printname = startenddecorator(printname)
+
+printname()
+
+
+
+###Add5
+
+import functools
+
+def startenddecorator(func):
+
+    @function.wrap(function)
+    def wrapper(*args,**kwargs):
+        print('Start')
+        func{*arg,**kwargs}
+        print('End')
+        return result
+    return wrapper
+
+
+
+@startenddecorator
+def add5(x):
+    return x + 5
+
+add5(10)
+
+result = add5(10)
+print(result)
+
+print(help(add5))
+print(add5.__name__)
+
+
+--------------------------------------------
+
+# Generators
+# function that return an object that can be iterated over
+# MEMORY EFFICIENT = save a lot of memory when large data
+
+# special : generate the items only one at a time and only when
+# you ask for it
+
+## google it
+
+def 
+## exmaple
+def mygenerator():
+    yield 1
+    yield 2
+    yield 3
+
+g = mygenerator()
+print(g)
+<generator object mygenerator at 0x0000010E538E2740>
+
+for i in g:
+    print(i)
+
+# stop at 1, stop at 2, stop at 3, stopiteration then
+# stopiteration shows = always raise if it has no yield
+value = next(g)
+print(value)
+
+
+# next example
+def mygenerator():
+    yield 1
+    yield 2
+    yield 3
+
+g = mygenerator()
+
+#1+2+3
+print(sum(g))
+#sort
+sorted(g)
+
+
+# another function
+def countdown(num):
+    print('Starting')
+    while num > 0:
+        yield num
+        num -= 1
+
+cd = countdown(4)
+
+value = next(cd)
+print(value)
+
+#4.3.2.1, stopiteration
+print(next(cd))
+
+### BIGBIG advantage
+#
+import sys
+def firstn(n):
+    nums = []
+    num = 0
+    while num < n:
+        nums.append(num)
+        num += 1 #update current num
+    return nums
+
+#0 to 9
+print(firstn(10))
+
+# since num store in list = lots of memory
+print(sum(firstn(10)))
+
+# Use generator instead
+
+def firstn_generator(n):
+    num = 0
+    while num < n:
+        yield num
+        num += 1 # update
+
+    
+
+# SAVE TONS OF MEMORY!!!!
+print(sys.getsizeof(firstn(100000))) #800984 bits
+print(sys.getsizeof(firstn_generator(100000))) # 112 bits
+
+
+# Practice
+# Fibonacci series
+
+def mygenerator():
+    a,a2 = 0, 1
+    while a < limit
+        yield a
+        a,a2 = a2, a+a2
+
+fib = fibonacci(30)
+for i in fib:
+    print(i)
+1
+3
+5
+8
+13
+21
+
+
+#  exmaple 2
+# quick generator function
+import sys
+mygenerator = (i for i in range(10000) if i % 2 == 0)
+for i in mygenerator:
+    print(i)
+0
+2
+4
+6
+8
+print(list(mygenerator))
+print(sys.getsizeof(mygenerator))
+112
+# normal list size
+mylist = [i for i in range(10000) if i % 2 == 0]
+print(mylist)
+print(sys.getsizeof(mylist))
+41880
+
+
+
+
+
+
+
+
+
