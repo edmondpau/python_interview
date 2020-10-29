@@ -697,10 +697,32 @@ print(sys.getsizeof(mylist))
 41880
 
 
+--------------------------------------
+15
+#### Threading 
+## Multiprocessing
+
+#run code in paraleel and spd up the code
+# diff pro and thread
+# ...
+# ...
 
 
+# Diff between thread and process
+
+#Process is a thread
+
+-------------------------------------
+16
+# Threading
+
+# create and start multiople
+# sdhaer data
+# use lock to prevent race condi
+# demon process
+# use cue for theaad safe
 
 
-
+1666*7.8
 
 
