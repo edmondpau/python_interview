@@ -1,49 +1,44 @@
 # make a list of the squares 
 [x**2 for x in range(1,11)]
- 
+[1,4,9,16,25,36,49,64,81,100]
+
 
 
 import numpy as np
 np.array([x**2 for x in range(1,11)])
- 
+array([[1,4,9,,16,25,36,,49,64,81,100]]) 
 
 
 # square only the odd numbers
 [x**2 for x in range(1,11) if x % 2 == 1]
- 
+[1,9,25,49,81]
 
 
 # take a list of strings, and write the words that are over 2 characters long in uppercase.
 strings = ['a', 'as', 'bat', 'car', 'dove', 'python']
 [x.upper() for x in strings if len(x) > 2]
 You can create a list comprehension from any iterable (list, tuple, string, etc)
-
+['bat','car','dove','python']
  
 
-
+!!!
 # extract the digits from a string
 string = "Hello 963257 World"
 [int(x) for x in string if x.isdigit()]
 # for x in string, will look at each character individually
 # if x is a digit, then convert it using int()
- 
+[9,6,3,2,5,7]
 
 
 # iterate over a dictionary's items
 d = {'a':'apple', 'b':'banana', 'c':'cookie'}
- 
-
 
 list(d.items())  # recall what dict.items() returns: a list of tuples
- 
+[('a','apple'),('b','banana'),('c','cookie')]
 
-
+!!!
+!!!
 [key + ' is for ' + value for key, value in d.items() if key != 'b' ]
-
-
-
-
-
 
 
 
@@ -56,9 +51,9 @@ dict_comp = {key-expr : value-expr for value in collection if condition}
 Look at the list strings from above.
 
  
-
-
-# create a dictionary, where the key is the word capitalized, and the value is the length of the word
+!!!
+# create a dictionary, where the key is the word capitalized, 
+# and the value is the length of the word
 fruits = ['apple', 'mango', 'banana','cherry']
 {f.capitalize():len(f) for f in fruits}
  
@@ -68,11 +63,11 @@ fruits = ['apple', 'mango', 'banana','cherry']
 strings = ['a', 'as', 'bat', 'car', 'dove', 'python']
  
 
-
+!!!
 list(enumerate(strings))  # enumerate produces a collection of tuples, with index and value
  
 
-
+!!!
 index_map = {index:val for index, val in enumerate(strings)}
 index_map
  
@@ -132,6 +127,13 @@ myName = input()
 
 number = np.random.randint(1, 21)
 
+
+
+
+
+
+
+
 Functions and scope
 If python can't find a variable in the functions body, it will look for it in the next higher scope. Each function has a parent scope, which is where the function is defined.
 
@@ -160,7 +162,16 @@ x, y, z = 1, 1, 1
 # is uses f's value of y = 2
 # it uses global x = 1
 
-def f():
+def f():
+    y = 2
+    def g():
+        z = 3
+        return(x, y, z) 
+    return(g()) 
+ 
+print(f())
+print(x, y, z)
+
 
  
 
@@ -173,8 +184,16 @@ x, y, z = 1, 1, 1
 # it searches the global environment for x and y because g is defined in the global environment
 # it uses global x = 1, and y = 1
 
-def g():
-    z = 3
+def g():
+    z = 3
+    return(x, y, z)
+ 
+def f():
+    y = 2
+    return(g()) 
+ 
+print(f())
+print(x, y, z)
 
  
 
@@ -182,29 +201,33 @@ def g():
 # keyword global gives the function access to the value in the global environment
 x, y, z = 1, 1, 1
 
-def f():
-    y = 2
-    def g():
-        global z  # calling global, gives g access to the global value of z
-        z = 3     # will assign 3 to the global variable z
-        return(x, y, z) 
-    return(g()) 
+def f():
+    y = 2
+    def g():
+        global z  # calling global, gives g access to the global value of z
+        z = 3     # will assign 3 to the global variable z
+        return(x, y, z) 
+    return(g()) 
+ 
+print(f())
+print(x, y, z)
 
- 
 
+x, y, z = 1, 1, 1
+ 
+def g():
+    z = 3
+    return(x, y, z)
+ 
+def f():
+    global y
+    y = 2
+    return(g()) 
+ 
+print(g()) # when we first run g(), it uses the global values of x and y, but the local value of z
+# the local value of z does not affect the globals value of z
+print(x, y, z)
 
-x, y, z = 1, 1, 1
-
-def g():
-    z = 3
-    return(x, y, z)
-
-def f():
-    global y
-    y = 2
-    return(g()) 
-
- 
 
 
 print(f())  # when we run f(), the global value of y is changed
@@ -231,30 +254,43 @@ f()
 
 x, y, z = 1, 1, 1
 
-def f():
-    global y
-    y = 4
-    def g():
-        global y 
-        y = 10 
-        global z  
-        z = 3
+def f():
+    global y
+    y = 4
+    def g():
+        global y 
+        y = 10 
+        global z  
+        z = 3
+        return(x, y, z) 
+    return(g()) 
+ 
+print(f())
+print(x, y, z)
 
  
 
-
+!!!
+!!!
+!!!
+!!!
 # the keyword nonlocal will search the higher scope for the variable
 # and will modify it
 x, y, z = 1, 1, 1
 
-def f():
-    y = 4
-    def g():
-        nonlocal y  
-        y = 10  # affects the y defined inside f
-        global z  
-
- 
+def f():
+    y = 4
+    def g():
+        nonlocal y  
+        y = 10  # affects the y defined inside f
+        global z  
+        z = 3
+        return(x, y, z)
+    print(x, y, z)  # this line is run before g() is called
+    return(g())  # when g() is called, y will be modified
+ 
+print(f())
+print(x, y, z)
 
 
 p, q = 1, 1
@@ -265,6 +301,15 @@ def f():
     return(p, q, r)
 
 f()
+
+
+
+
+
+
+
+
+
 Python functions are objects themselves
 You can reference python functions as objects
 
@@ -280,13 +325,14 @@ import re  # package for regular expressions
 
 # here is a function that applies a series of operations to clean up the strings
 
-def clean_strings1(strings):
-    result = []
-    for value in strings:
-        value = value.strip()  # strip whitespace
-        value = re.sub('[!#?]', '', value)  # substitutes the characters !, #, ? with ''
-        value = value.title()  # title case
-
+def clean_strings1(strings):
+    result = []
+    for value in strings:
+        value = value.strip()  # strip whitespace
+        value = re.sub('[!#?]', '', value)  # substitutes the characters !, #, ? with ''
+        value = value.title()  # title case
+        result.append(value)
+    return result
  
 
 
@@ -313,14 +359,13 @@ str.strip('    alabama    ')
 # the function clean strings takes two arguments:
 # a list of strings
 # a list of functions
-def clean_strings2(strings, ops):
-    result = []
-    for value in strings:            # we loop over each string
-        for function in ops:         # for each string, we loop over the functions listed in ops
-            value = function(value)  # we update the value each time
-        result.append(value)         # we append the list results with the value
-
- 
+def clean_strings2(strings, ops):
+    result = []
+    for value in strings:            # we loop over each string
+        for function in ops:         # for each string, we loop over the functions listed in ops
+            value = function(value)  # we update the value each time
+        result.append(value)         # we append the list results with the value
+    return result
 
 
 clean_strings2(states, clean_ops)
@@ -341,6 +386,26 @@ map(str.strip, states)  # map returns a map object
 # to see the contents of the map object, you can put it into a list:
 # map only allows you to specify one function
 list(map(str.strip, states))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 lambda functions
 In one of the later examples, I created a lambda function
 
